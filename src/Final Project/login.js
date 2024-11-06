@@ -9,9 +9,9 @@ export default function Login({setIsAuthenticated}){
     const [password,setPassword]=useState('');
     const navigate=useNavigate();
 
-    const handleSubmit = async(e)=>{
-        e.preventDefault();
-    }
+    // const handleSubmit = async(e)=>{
+    //     e.preventDefault();
+    // }
 
     // Replace with your actual authentication API call
     if(email==='Sankar123@gmail.com' && password === 'San@123') {
@@ -21,15 +21,10 @@ export default function Login({setIsAuthenticated}){
         alert('Invalid credentials');
     }
     
-    // if(email === 'sankar123@gmail.com' && password === 'San123') {
-    //     localStorage.setItem('isAuthenticated','true');
-    //     setIsAuthenticated(true);
-    // }
-
     return(
         <>
         <h2 style={{textAlign:'center'}}>Login Account</h2>
-        <form name="login" action="/Home" target="_self" onSubmit={handleSubmit}>
+        <form name="login" action="/Home" target="_self"> {/*onSubmit={handleSubmit}*/}
             <label for='email'>Email:</label><br/>
             <input
                 type="email"
