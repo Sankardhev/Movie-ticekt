@@ -47,7 +47,7 @@ export default function Login({setIsAuthenticated}){
                 onChange={(e)=>setPassword(e.target.value)}
                 required
             /><br/><br/>
-            <button type="button" className="btn btg-primary mb-4" onClick='document.location="Home.js"'>Login</button>
+            <button type="button" className="btn btn-primary mb-4" onClick='document.location="Home.js"'>Login</button>
             <button type='button' className='btn btn-primary' onClick={()=>{
                 localStorage.removeItem('isAuthenticated');
                 setIsAuthenticated(false);
