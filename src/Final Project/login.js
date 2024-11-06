@@ -15,15 +15,16 @@ export default function Login({setIsAuthenticated}){
 
     // Replace with your actual authentication API call
     if(email==='Sankar123@gmail.com' && password === 'San@123') {
+        localStorage.setItem('isAuthenticated','true');
         setIsAuthenticated(true);
     }else{
         alert('Invalid credentials');
     }
     
-    if(email === 'sankar123@gmail.com' && password === 'San123') {
-        localStorage.setItem('isAuthenticated','true');
-        setIsAuthenticated(true);
-    }
+    // if(email === 'sankar123@gmail.com' && password === 'San123') {
+    //     localStorage.setItem('isAuthenticated','true');
+    //     setIsAuthenticated(true);
+    // }
 
     return(
         <>
@@ -46,7 +47,7 @@ export default function Login({setIsAuthenticated}){
                 onChange={(e)=>setPassword(e.target.value)}
                 required
             /><br/><br/>
-            <input type="submit" value='Submit' className="btn bg-primary mb-4"/>
+            <button type="button" className="btn btg-primary mb-4" onClick='document.location="Home.js"'>Login</button>
             <button type='button' className='btn btn-primary' onClick={()=>{
                 localStorage.removeItem('isAuthenticated');
                 setIsAuthenticated(false);
