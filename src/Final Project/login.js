@@ -29,7 +29,7 @@ export default function Login({setIsAuthenticated}){
     return(
         <>
         <h2 style={{textAlign:'center'}}>Login Account</h2>
-        <form style={{width:'100%',textAlign:'center'}} name="login" action="/Home" target="_self" onSubmit={handleSubmit}>
+        <form style={{textAlign:'center'}} name="login" action="/Home" target="_self" onSubmit={handleSubmit}>
             <label for='email'>Email:</label><br/>
             <input
                 type="email"
