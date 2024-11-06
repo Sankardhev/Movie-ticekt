@@ -47,14 +47,13 @@ export default function Login({setIsAuthenticated}){
                 onChange={(e)=>setPassword(e.target.value)}
                 required
             /><br/><br/>
-            <div className='d-flex justify-content-between'>
+            <div className='d-flex justify-content-center'>
                 <button type="button" className="btn btn-primary mb-4" onClick='document.location="Home.js"'>Login</button>
                 <button type='button' className='btn btn-primary mb-4' onClick={()=>{
                     localStorage.removeItem('isAuthenticated');
                     setIsAuthenticated(false);
             }}>Logout</button>
             </div>
-            
             
             <GoogleLogin
                 onSuccess={credentialResponse => {
