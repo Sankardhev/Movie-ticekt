@@ -29,7 +29,7 @@ export default function Login({setIsAuthenticated}){
     return(
         <>
         <h2 style={{textAlign:'center'}}>Login Account</h2>
-        <form style={{width:'400px'}} name="login" action="/Home" target="_self" onSubmit={handleSubmit}>
+        <form style={{width:'400px',textAlign:'center'}} name="login" action="/Home" target="_self" onSubmit={handleSubmit}>
             <label for='email'>Email:</label><br/>
             <input
                 type="email"
@@ -47,11 +47,13 @@ export default function Login({setIsAuthenticated}){
                 onChange={(e)=>setPassword(e.target.value)}
                 required
             /><br/><br/>
-            <button type="button" className="btn btn-primary mb-4" onClick='document.location="Home.js"'>Login</button>
-            <button type='button' className='btn btn-primary' onClick={()=>{
-                localStorage.removeItem('isAuthenticated');
-                setIsAuthenticated(false);
+            <div className='d-flex justify-content-between'>
+                <button type="button" className="btn btn-primary mb-4" onClick='document.location="Home.js"'>Login</button>
+                <button type='button' className='btn btn-primary mb-4' onClick={()=>{
+                    localStorage.removeItem('isAuthenticated');
+                    setIsAuthenticated(false);
             }}>Logout</button>
+            </div>
             
             
             <GoogleLogin
