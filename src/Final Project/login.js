@@ -1,65 +1,82 @@
 //import { Link } from "react-router-dom";
 import { GoogleLogin } from '@react-oauth/google';
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
-export default function Login({setIsAuthenticated}){
+export default function Login({setIsAuthenticate}){
 
+    const navigate=useNavigate();
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
-    const navigate=useNavigate();
-
-    // const handleSubmit = async(e)=>{
-    //     e.preventDefault();
-    // }
-
-    // Replace with your actual authentication API call
-    if(email==='Sankar123@gmail.com' && password === 'San@123') {
-        localStorage.setItem('isAuthenticated','true');
-        setIsAuthenticated(true);
-    }else{
-        alert('Invalid credentials');
-    }
     
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        //Replace with your actual authentication API call
+        if(email === 'Sankar5544@gmail.com' && password === 'password') {
+            localStorage.setItem('isAuthenticate','true');
+            setIsAuthenticate(true);
+            loginSuccess();
+            navigate('/Home');
+        }else{
+            alert('Invalid credentials');
+        }
+    };
+
+    const loginSuccess= () =>
+        toast('Login Successful!...',{
+            position:'top-center',
+            style:{
+                margin:20,
+                border:'5px solid green',
+                color:'green',
+                duration:'3000'
+            },
+        });
+
     return(
         <>
-        <h2 style={{textAlign:'center'}}>Login Account</h2>
-        <form name="login" action="/Home" target="_self"> {/*onSubmit={handleSubmit}*/}
-            <label for='email'>Email:</label><br/>
-            <input
-                type="email"
-                placeholder="Email"
-                id='email'
-                style={{alignContent:'center'}}
-                onChange={(e)=>setEmail(e.target.value)}
-                required
-            /><br/><br/>
-            <label for='pwd'>Password:</label><br/>
-            <input 
-                type='password'
-                placeholder="password"
-                id='pwd'
-                onChange={(e)=>setPassword(e.target.value)}
-                required
-            /><br/><br/>
-            <div className='d-flex'>
-                <button type="button" className="btn btn-primary mb-4" onClick='document.location="Home.js"'>Login</button>
-                <button type='button' className='btn btn-primary mb-4' onClick={()=>{
-                    localStorage.removeItem('isAuthenticated');
-                    setIsAuthenticated(false);
-            }}>Logout</button>
+        <div className='container-fluid'>
+            <div className='row'>
+                <div className='col-sm-12' style={{padding:'100px 400px 100px'}}>
+                        <form style={{width:'500px',textAlign:'center'}} className='bg-info p-3 rounded'>
+                            <h2 className='mb-5'>Login Account</h2>
+                            <label htmlFor='email' style={{marginLeft:'30px'}}>Email:</label>
+                            <input
+                                type="email"
+                                placeholder="Email"
+                                value={email}
+                                id='email'
+                                onChange={(e)=>setEmail(e.target.value)}
+                                required
+                                style={{marginLeft:'10px'}}
+                            /><br/><br/>
+                            <label htmlFor='pwd'>Password:</label>
+                            <input 
+                                type="password"
+                                placeholder="password"
+                                id="pwd"
+                                onChange={(e)=>setPassword(e.target.value)}
+                                required
+                                style={{marginLeft:'10px'}}
+                            /><br/><br/>
+                            <button type="submit" className="btn btn-primary px-5 mb-3" onClick={handleSubmit}>Login</button>
+                            
+                            <GoogleLogin
+                                onSuccess={credentialResponse => {
+                                    console.log(credentialResponse);
+                                    navigate('/Home');
+                                }}
+                                onError={() => {
+                                    console.log('Login Failed');
+                            }}
+                            />
+                        </form>
+                    {/* </div> */}
+                </div>
             </div>
-            
-            <GoogleLogin
-                onSuccess={credentialResponse => {
-                    console.log(credentialResponse);
-                    navigate('/Home');
-                }}
-                onError={() => {
-                    console.log('Login Failed');
-            }}
-            />
-        </form>
+        </div>
         </>
     )
 };

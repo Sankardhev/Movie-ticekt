@@ -5,7 +5,9 @@ export const CartContext=createContext();
 
 export const CartProvider=({children})=>{
 
+    // const [isAuthenticate,setIsAuthenticate]=();
     const [cartItems,setCartItems]=useState(localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []);
+    
     const notifySuccess=()=>
     toast('Add to Cart Successfull!',{
         position:"top-center",

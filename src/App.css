@@ -41,10 +41,6 @@
 .card{
   background-image:linear-gradient(green,white);
 }
-form{
-  margin-left:600px;
-  margin-top:30px;
-}
 Link{
   text-decoration: none;
 }

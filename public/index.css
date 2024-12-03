@@ -1,4 +1,7 @@
-body{ 
-    background-image:linear-gradient(to left,red,white);
+body{
+    background-image: url('./image/plain.jpg');
     background-repeat: no-repeat;
+    background-size: cover;
+    /* background-image:linear-gradient(to left,red,white);
+    background-repeat: no-repeat; */
 }

@@ -32,7 +32,7 @@ export default function Onecard(){
                         <p><b>ReleaseDate:</b> {data.releasedate}</p>
                         <p><b>Price: <span className="text-danger">$ {data.ticketprice}</span></b></p>
                         <div><b>Describtion:</b> {data.description}</div>
-                        <div className='d-flex justify-content-between mt-2'>
+                        <div className='d-flex justify-content-between mt-4'>
                             <button type='button' className='btn btn-warning'><b>Add to Cart</b></button>
                         </div>          
                 </div>

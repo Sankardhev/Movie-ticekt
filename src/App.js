@@ -11,18 +11,17 @@ import { Toaster } from 'react-hot-toast';
 import { useState } from 'react';
 // import { CartProvider } from './Final Project/cartpage';
 
-
 function App() {
 
-  const [isAuthenticated,setIsAuthenticated]=useState(localStorage.getItem('isAuthenticated')==='true');
+  const [isAuthenticate,setIsAuthenticate]=useState(localStorage.getItem('isAuthenticate') === 'true');
 
   return (
     <>
       {/* <Navi/> */}
       {/* <CartProvider> */}
           <Routes>
-            <Route path='/' element={<Login setIsAuthenticated={setIsAuthenticated}/>}/>
-            <Route path='/Home' element={isAuthenticated ? <Home/> : <Navigate to="/login"/> } />
+            <Route path='/' element={<Login setIsAuthenticate={setIsAuthenticate}/>}/>
+            <Route path='/Home' element={isAuthenticate ? <Home/> : <Navigate to='/login'/> } />
             <Route path='/about' element={<About/>} />
             <Route path='/Fetchget' element={<Getfetch/>} />
             <Route path='/view/:_id' element={<Onecard/>} />

@@ -33,12 +33,11 @@ export default function Viewcart(){
                         {
                             cartItems.length > 0 ? (
                                 <div>
-                                    
                                     <h2>Total: $ {getCartTotal()}</h2>
-                                    <button type="button" className="btn btn-info" onClick={()=>{clearCart()}}>clearCart</button>
+                                    <button type="button" className="btn btn-info" onClick={()=>{clearCart()}}>Clearcart</button>
                                 </div>
                             ) : (
-                                <div style={{margin:'100px 0 100px 450px',textAlign:'center',width:'500px',fontSize:'30px'}} className="text-white bg-warning p-5 rounded-pill">Your cart is Empty</div>
+                                <div style={{margin:'100px 0 100px 450px',textAlign:'center',width:'350px',fontSize:'30px'}} className="text-white bg-info p-2 rounded-pill">Your cart is Empty</div>
                             )
                         }
                     </div>

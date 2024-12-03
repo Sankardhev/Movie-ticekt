@@ -11,15 +11,15 @@ const [error,setError]=useState(null);
 const [loading,setLoading]=useState(true);
 
 useEffect(()=>{
-  fetch('https://backend-crud-one.vercel.app/product')
+  fetch('https://backend-crud-one.vercel.app/product')  
   .then(response=>response.json())
   .then(data=>setData(data))
   .then(error=>setError(error))
   .then(loading=>setLoading(loading))
 },[])
 
-if(loading) return <p>Loading...</p>
-if(error) return <p>error {error.message}</p>
+if(loading) return <p className='text-center mt-5'>Loading...</p>
+if(error) return <p className='text-center mt-5'>error {error.message}</p>
 
   return (
       <>
