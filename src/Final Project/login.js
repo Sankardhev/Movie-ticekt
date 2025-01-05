@@ -39,7 +39,7 @@ export default function Login({setIsAuthenticate}){
         <>
         <div className='container-fluid'>
             <div className='row'>
-                <div className='col-sm-12 col-md-12' style={{padding:'100px 400px 100px'}}>
+                <div className='col-sm-12' style={{padding:'100px 400px 100px'}}>
                         <form style={{width:'500px',textAlign:'center'}} className='bg-info p-3 rounded'>
                             <h2 className='mb-5'>Login Account</h2>
                             <label htmlFor='email' style={{marginLeft:'30px'}}>Email:</label>

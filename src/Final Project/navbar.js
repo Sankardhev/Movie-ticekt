@@ -8,7 +8,7 @@ export default function Navi(){
 
     return(
         <>
-            <nav className="navbar navbar-expand-sm fixed-top">
+            <nav className="navbar navbar-expand-sm">
                 <div className="container-fluid">
                     <NavLink><img src="/image/cini.jpg" alt="icon" style={{height:'50px',width:'100px'}} className="navbar-brand rounded-pill ms-3"/></NavLink>
                     <button type="button" className="navbar-toggler" data-bs-toggle='collapse' data-bs-target='#collp'>

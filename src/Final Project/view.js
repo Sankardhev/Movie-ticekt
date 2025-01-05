@@ -29,7 +29,7 @@ export default function Onecard(){
                         <p><b>Movie:</b> {data.name}</p>
                         <p><b>Director:</b> {data.director}</p>
                         <p><b>Budget:</b> {data.budget}</p>
-                        <p><b>ReleaseDate:</b> {data.releasedate}</p>
+                        <p><b>Release date:</b> {data.releasedate}</p>
                         <p><b>Price: <span className="text-danger">$ {data.ticketprice}</span></b></p>
                         <div><b>Describtion:</b> {data.description}</div>
                         <div className='d-flex justify-content-between mt-4'>

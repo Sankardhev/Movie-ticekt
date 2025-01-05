@@ -28,7 +28,7 @@ if(error) return <p className='text-center mt-5'>error {error.message}</p>
         <div className='container-fluid'>
           <div className='row'>
             {data.map(product => (
-              <div className='col-sm-3 col-md-3'>
+              <div className='col-sm-3'>
                 <div className='card m-2' style={{width:'315px'}}>
                   <div className='card-img-top'>
                   <Link to={`/view/${product._id}`}><img src={product.image} alt='movie' style={{height:'300px',width:'100%'}}/></Link>

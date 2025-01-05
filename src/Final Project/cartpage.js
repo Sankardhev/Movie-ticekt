@@ -23,7 +23,6 @@ export const CartProvider=({children})=>{
             style:{
                 backgroundImage:'linear-gradient(to right,red,orange)',
                 color:'white',
-                // duration:1000,
             },
         });
     
